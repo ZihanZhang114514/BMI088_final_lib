@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
+r"""
 BMI088_final_lib_setup.py
 BMI088(加速度计 + 陀螺仪)库自动配置工具
 
