@@ -1,6 +1,6 @@
 [English](README.md) | **简体中文**
 
-# acc_gyro_final_lib
+# BMI088_final_lib
 
 面向 **STM32 HAL + Keil MDK** 工程的寄存器级 **BMI088 六轴传感器驱动库**
 （加速度计 + 陀螺仪 + 温度，SPI 接口）。
@@ -12,7 +12,7 @@
 ### 1) 把库装进你的 Keil 工程
 
 ```bash
-python acc_gyro_final_lib_setup.py
+python BMI088_final_lib_setup.py
 ```
 
 界面上填入你的 MDK-ARM 工程文件夹，脚本会自动：复制库文件、在 `.uvprojx` 里建分组并加入全部
@@ -22,7 +22,7 @@ python acc_gyro_final_lib_setup.py
 也支持命令行：
 
 ```bash
-python acc_gyro_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
+python BMI088_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
 ```
 
 ### 2) 代码里只需要两个 API
@@ -48,19 +48,19 @@ BMI088_ReadData(data, BMI088_DATA_GYRO);           /* data = 三轴角速度 rad
 ## 文档
 
 接线、CubeMX 配置、完整 API、错误码、实测踩坑记录：
-[`acc_gyro_final_lib/acc_gyro_final_lib.md`](acc_gyro_final_lib/acc_gyro_final_lib.md)
-（[English](acc_gyro_final_lib/README.md)）
+[`BMI088_final_lib/BMI088_final_lib.md`](BMI088_final_lib/BMI088_final_lib.md)
+（[English](BMI088_final_lib/README.md)）
 
 ## 仓库结构
 
 | 路径 | 说明 |
 |---|---|
-| `acc_gyro_final_lib/` | 库本体：3 个 `.c` + 4 个 `.h`，以及说明文档 |
-| `acc_gyro_final_lib_setup.py` | Keil 工程自动配置工具（tkinter 界面 / 命令行） |
+| `BMI088_final_lib/` | 库本体：3 个 `.c` + 4 个 `.h`，以及说明文档 |
+| `BMI088_final_lib_setup.py` | Keil 工程自动配置工具（tkinter 界面 / 命令行） |
 
 ## 移植
 
-换 SPI 口 / 换片选脚只需要改 `acc_gyro_final_lib/bmi088_config.h` 里的几个宏。
+换 SPI 口 / 换片选脚只需要改 `BMI088_final_lib/bmi088_config.h` 里的几个宏。
 
 ## 状态
 

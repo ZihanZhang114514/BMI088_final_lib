@@ -1,6 +1,6 @@
 **English** | [简体中文](README.zh-CN.md)
 
-# acc_gyro_final_lib
+# BMI088_final_lib
 
 A register-level **BMI088 6-axis IMU driver** (accelerometer + gyroscope + temperature, SPI)
 for **STM32 HAL + Keil MDK** projects.
@@ -13,7 +13,7 @@ No third-party dependencies — 7 source files and you are ready to go.
 ### 1) Install the library into your Keil project
 
 ```bash
-python acc_gyro_final_lib_setup.py
+python BMI088_final_lib_setup.py
 ```
 
 Type your MDK-ARM project folder into the GUI and it will automatically:
@@ -24,7 +24,7 @@ It backs up `.uvprojx` before editing (one-click restore).
 Command line is supported too:
 
 ```bash
-python acc_gyro_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
+python BMI088_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
 ```
 
 ### 2) Two APIs are all you need
@@ -50,20 +50,20 @@ BMI088_ReadData(data, BMI088_DATA_GYRO);            /* data = gx, gy, gz  [rad/s
 ## Documentation
 
 Full documentation — wiring, CubeMX configuration, complete API, error codes and
-field-tested pitfalls: [`acc_gyro_final_lib/README.md`](acc_gyro_final_lib/README.md)
-([中文版](acc_gyro_final_lib/acc_gyro_final_lib.md))
+field-tested pitfalls: [`BMI088_final_lib/README.md`](BMI088_final_lib/README.md)
+([中文版](BMI088_final_lib/BMI088_final_lib.md))
 
 ## Repository layout
 
 | Path | Description |
 |---|---|
-| `acc_gyro_final_lib/` | the library: 3 `.c` + 4 `.h` files plus documentation |
-| `acc_gyro_final_lib_setup.py` | Keil project auto-installer (tkinter GUI / CLI) |
+| `BMI088_final_lib/` | the library: 3 `.c` + 4 `.h` files plus documentation |
+| `BMI088_final_lib_setup.py` | Keil project auto-installer (tkinter GUI / CLI) |
 
 ## Porting
 
 Switching SPI peripheral or chip-select pins only requires editing a few macros in
-`acc_gyro_final_lib/bmi088_config.h`.
+`BMI088_final_lib/bmi088_config.h`.
 
 ## Status
 

@@ -1,6 +1,6 @@
-**English** | [简体中文](acc_gyro_final_lib.md)
+**English** | [简体中文](BMI088_final_lib.md)
 
-# acc_gyro_final_lib — BMI088 6-axis library (accelerometer + gyroscope + temperature)
+# BMI088_final_lib — BMI088 6-axis library (accelerometer + gyroscope + temperature)
 
 Register-level BMI088 driver for **STM32 HAL + Keil MDK** projects; the default configuration
 targets the **DJI RoboMaster Development Board Type C**. Only 7 source files, no third-party
@@ -19,7 +19,7 @@ dependencies — drop them into your project and use them.
 | `bmi088_common.c` | Chip-select control / SPI transfer / register read-write / CS-and-protocol self test / combined reads |
 | `bmi088_accel.c` | Accelerometer + temperature |
 | `bmi088_gyro.c` | Gyroscope |
-| `README.md` / `acc_gyro_final_lib.md` | English / Chinese documentation |
+| `README.md` / `BMI088_final_lib.md` | English / Chinese documentation |
 
 ---
 
@@ -67,25 +67,25 @@ which one answers is decided by its own CS line.
 Run it from the folder that contains both the script and the library folder:
 
 ```bash
-python acc_gyro_final_lib_setup.py
+python BMI088_final_lib_setup.py
 ```
 
 Enter your **MDK-ARM project folder** (e.g. `D:\proj\MyBoard\MDK-ARM`) and press the button.
 The script will:
 
-1. copy the library into `<MDK-ARM>/acc_gyro_final_lib/`
+1. copy the library into `<MDK-ARM>/BMI088_final_lib/`
 2. create a group with the same name in `.uvprojx` and add every `.c/.h`
-3. append the include path `.\acc_gyro_final_lib` to the C compiler settings
+3. append the include path `.\BMI088_final_lib` to the C compiler settings
 4. copy this documentation into the project folder
 5. check the SPI1 pin assignment in your `.ioc` (it warns loudly if MOSI is on PB5)
 6. warn about other BMI088 drivers in the project that would cause duplicate symbols
 
-It also works headless: `python acc_gyro_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"`.
+It also works headless: `python BMI088_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"`.
 The `.uvprojx` is always backed up first, and the GUI can restore the newest backup in one click.
 
 ### Option B — manual
 
-1. copy `bmi088_*.c / bmi088_*.h / README.md` into a folder of your project (e.g. `MDK-ARM/acc_gyro_final_lib/`)
+1. copy `bmi088_*.c / bmi088_*.h / README.md` into a folder of your project (e.g. `MDK-ARM/BMI088_final_lib/`)
 2. Keil → Manage Project Items → create a group and add the 3 `.c` files
 3. Keil → Options for Target → C/C++ → Include Paths → add that folder
 4. rebuild

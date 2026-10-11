@@ -1,6 +1,6 @@
 [English](README.md) | **简体中文**
 
-# acc_gyro_final_lib —— BMI088 六轴传感器库（加速度计 + 陀螺仪 + 温度）
+# BMI088_final_lib —— BMI088 六轴传感器库（加速度计 + 陀螺仪 + 温度）
 
 面向 **STM32 HAL + Keil MDK** 工程的寄存器级 BMI088 驱动，默认配置对应 **大疆 RoboMaster 开发板 C 型**。
 只有 7 个源文件，不依赖任何第三方库，直接扔进工程就能用。
@@ -18,7 +18,7 @@
 | `bmi088_common.c` | 片选控制 / SPI 收发 / 寄存器读写 / 片选时序自检 / 组合读取 |
 | `bmi088_accel.c` | 加速度计 + 温度 |
 | `bmi088_gyro.c` | 陀螺仪 |
-| `acc_gyro_final_lib.md` | 本文档 |
+| `BMI088_final_lib.md` | 本文档 |
 
 ---
 
@@ -64,26 +64,26 @@
 在 `库文件夹的上一级` 执行：
 
 ```bash
-python acc_gyro_final_lib_setup.py
+python BMI088_final_lib_setup.py
 ```
 
 界面里填入你的 **MDK-ARM 工程文件夹**（例如 `D:\proj\MyBoard\MDK-ARM`），点“开始配置”，脚本会自动：
 
-1. 把库文件复制到 `<MDK-ARM>/acc_gyro_final_lib/`
+1. 把库文件复制到 `<MDK-ARM>/BMI088_final_lib/`
 2. 在 `.uvprojx` 里新建同名分组并加入所有 `.c/.h`
-3. 把头文件搜索路径 `.\acc_gyro_final_lib` 加到 C 编译器设置里
+3. 把头文件搜索路径 `.\BMI088_final_lib` 加到 C 编译器设置里
 4. 把本文档复制到工程目录下
 5. 顺手检查 `.ioc` 的 SPI1 引脚是否配错（发现 PB5 会红字报警）
 
 也可以命令行用：
 
 ```bash
-python acc_gyro_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
+python BMI088_final_lib_setup.py --cli "D:\proj\MyBoard\MDK-ARM"
 ```
 
 ### 方法二：手动
 
-1. 把 `bmi088_*.c / bmi088_*.h / acc_gyro_final_lib.md` 复制到工程里某目录（例如 `MDK-ARM/acc_gyro_final_lib/`）
+1. 把 `bmi088_*.c / bmi088_*.h / BMI088_final_lib.md` 复制到工程里某目录（例如 `MDK-ARM/BMI088_final_lib/`）
 2. Keil → Manage Project Items → 新建分组，把 3 个 `.c` 加进去
 3. Keil → Options for Target → C/C++ → Include Paths，加入该目录
 4. 重新编译

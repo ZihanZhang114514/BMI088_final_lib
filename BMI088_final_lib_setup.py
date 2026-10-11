@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-acc_gyro_final_lib_setup.py
+BMI088_final_lib_setup.py
 BMI088(加速度计 + 陀螺仪)库自动配置工具
 
 它会把你指定目录下的 Keil MDK-ARM 工程配置好：
-  1. 复制库文件到 <你的MDK-ARM>/acc_gyro_final_lib/
+  1. 复制库文件到 <你的MDK-ARM>/BMI088_final_lib/
   2. 在 .uvprojx 里新建同名分组，加入全部 .c/.h
-  3. 把头文件搜索路径 .\acc_gyro_final_lib 加进 C 编译器设置
-  4. 把 README(acc_gyro_final_lib.md) 复制到工程目录下
+  3. 把头文件搜索路径 .\BMI088_final_lib 加进 C 编译器设置
+  4. 把 README(BMI088_final_lib.md) 复制到工程目录下
   5. 检查 .ioc 里 SPI1 的引脚配置（MOSI 配成 PB5 会直接报警，这是最容易踩的坑）
   6. 所有 .uvprojx 修改前都会自动备份，界面上一键可还原
 
 用法：
-  图形界面：python acc_gyro_final_lib_setup.py
-  命令行  ：python acc_gyro_final_lib_setup.py --cli "D:\\proj\\MyBoard\\MDK-ARM"
-  还原备份：python acc_gyro_final_lib_setup.py --cli "D:\\proj\\MyBoard\\MDK-ARM" --restore
+  图形界面：python BMI088_final_lib_setup.py
+  命令行  ：python BMI088_final_lib_setup.py --cli "D:\\proj\\MyBoard\\MDK-ARM"
+  还原备份：python BMI088_final_lib_setup.py --cli "D:\\proj\\MyBoard\\MDK-ARM" --restore
 """
 
 import argparse
@@ -26,9 +26,9 @@ import re
 import shutil
 import sys
 
-LIB_DIR_NAME = "acc_gyro_final_lib"          # 库文件夹名(和 README 同名)
-README_NAME = "acc_gyro_final_lib.md"        # README 文件名(和库文件夹同名)
-GROUP_NAME = "acc_gyro_final_lib"            # 在 Keil 里显示的分组名
+LIB_DIR_NAME = "BMI088_final_lib"          # 库文件夹名(和 README 同名)
+README_NAME = "BMI088_final_lib.md"        # README 文件名(和库文件夹同名)
+GROUP_NAME = "BMI088_final_lib"            # 在 Keil 里显示的分组名
 C_FILES = ["bmi088_common.c", "bmi088_accel.c", "bmi088_gyro.c"]
 H_FILES = ["bmi088.h", "bmi088_config.h", "bmi088_reg.h", "bmi088_private.h"]
 ALL_FILES = C_FILES + H_FILES + [README_NAME]
@@ -336,7 +336,7 @@ def run_gui():
     from tkinter import filedialog, messagebox, scrolledtext, ttk
 
     root = tk.Tk()
-    root.title("BMI088 库自动配置工具  -  acc_gyro_final_lib")
+    root.title("BMI088 库自动配置工具  -  BMI088_final_lib")
     root.geometry("820x600")
     root.minsize(700, 500)
 
@@ -452,7 +452,7 @@ def run_gui():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="把 acc_gyro_final_lib (BMI088 加速度计+陀螺仪库) 配置进 Keil MDK-ARM 工程")
+        description="把 BMI088_final_lib (BMI088 加速度计+陀螺仪库) 配置进 Keil MDK-ARM 工程")
     parser.add_argument("target", nargs="?", help="MDK-ARM 工程文件夹路径")
     parser.add_argument("--cli", metavar="PATH", help="命令行模式：直接配置这个路径下的工程")
     parser.add_argument("--no-readme", action="store_true", help="不把 README 复制到工程根目录")

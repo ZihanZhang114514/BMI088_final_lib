@@ -9,7 +9,7 @@
  *   2. 初始化：while (BMI088_Init() != 0) { HAL_Delay(100); }   // 放在 while(1) 之前
  *   3. 读取  ：BMI088_ReadData(data, BMI088_DATA_ACCEL);        // data 是 float[3]
  *
- * 详细说明、接线、错误码、踩坑记录见同目录的 acc_gyro_final_lib.md
+ * 详细说明、接线、错误码、踩坑记录见同目录的 BMI088_final_lib.md
  * ========================================================================== */
 
 #include "main.h"
