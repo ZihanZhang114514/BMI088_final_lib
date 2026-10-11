@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Keil MDK 编译产物
+*.o
+*.crf
+*.d
+*.dep
+*.lnp
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.htm
+*.sct
+*.iex
+*.bak_*
+Objects/
+Listings/
+Debug/
+Release/
+
+# 个人设置
+*.uvguix.*
+*.uvopt
+*.uvoptx
+*.scvd
+
+# 系统/编辑器
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
