@@ -1,3 +1,5 @@
+[English](README.md) | **简体中文**
+
 # acc_gyro_final_lib —— BMI088 六轴传感器库（加速度计 + 陀螺仪 + 温度）
 
 面向 **STM32 HAL + Keil MDK** 工程的寄存器级 BMI088 驱动，默认配置对应 **大疆 RoboMaster 开发板 C 型**。
